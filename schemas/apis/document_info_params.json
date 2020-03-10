@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "title": "Get Document Info Type",
+  "required": [
+    "document_id",
+    "version"
+  ],
+  "properties": {
+    "document_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "format": "ascii_printable",
+      "description": "generated document id"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]{1,5}.[0-9]{1,3}.[0-9]{1,3}$",
+      "description": "version of document"
+    }
+  }
+}

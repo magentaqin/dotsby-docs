@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "title": "Create Document Params Type",
+  "required": [
+    "title",
+    "version"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "format": "ascii_printable",
+      "description": "title of document"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]{1,5}.[0-9]{1,3}.[0-9]{1,3}$",
+      "description": "version of document"
+    }
+  }
+}

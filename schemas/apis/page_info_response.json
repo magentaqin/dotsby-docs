@@ -1,0 +1,711 @@
+{
+  "type": "object",
+  "title": "Get Page Info Response",
+  "required": [
+    "title",
+    "page_id",
+    "is_root_path",
+    "path",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "number",
+      "minimum": 1,
+      "description": "auto increment page id"
+    },
+    "page_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "format": "ascii_printable",
+      "description": "generated page id"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "format": "ascii_printable",
+      "description": "title of page"
+    },
+    "is_root_path": {
+      "type": "boolean",
+      "description": "whether this page is the index page"
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "format": "ascii_printable",
+      "description": "page path"
+    },
+    "content": {
+      "type": "string",
+      "minLength": 1,
+      "format": "ascii_printable",
+      "description": "page content"
+    },
+    "apiContent": {
+      "schema": {
+        "type": "object",
+        "title": "Api Content",
+        "required": [
+          "title",
+          "request_url",
+          "method",
+          "request_headers",
+          "body",
+          "query_params",
+          "responses"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50,
+            "format": "ascii_printable",
+            "description": "title of Api"
+          },
+          "request_url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50,
+            "format": "ascii_printable",
+            "description": "Request Url"
+          },
+          "method": {
+            "type": "string",
+            "description": "Request Method",
+            "minLength": 1,
+            "maxLength": 50,
+            "format": "ascii_printable"
+          },
+          "request_headers": {
+            "type": "array",
+            "description": "request headers",
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "title": "Api Item",
+              "required": [
+                "key",
+                "type",
+                "required"
+              ],
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "title": "Nested Api Item",
+                  "required": [
+                    "key",
+                    "type",
+                    "required"
+                  ],
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 50,
+                      "format": "ascii_printable",
+                      "description": "key of ApiItem"
+                    },
+                    "type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "format": "ascii_printable",
+                      "description": "ApiItem Type. Could be stringified json schema.",
+                      "example": "object/string/number"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": "whether this field is required"
+                    },
+                    "description": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000,
+                      "format": "ascii_printable",
+                      "description": "description of ApiItem"
+                    },
+                    "displayName": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 50,
+                      "format": "ascii_printable",
+                      "description": "display name of ApiItem"
+                    },
+                    "examples": {
+                      "type": "array",
+                      "description": "examples of api item",
+                      "minItems": 1,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000,
+                        "format": "ascii_printable",
+                        "description": "api item example"
+                      }
+                    }
+                  }
+                },
+                "key": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "format": "ascii_printable",
+                  "description": "key of ApiItem"
+                },
+                "type": {
+                  "type": "string",
+                  "minLength": 1,
+                  "format": "ascii_printable",
+                  "description": "ApiItem Type. Could be stringified json schema.",
+                  "example": "object/string/number"
+                },
+                "required": {
+                  "type": "boolean",
+                  "description": "whether this field is required"
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1000,
+                  "format": "ascii_printable",
+                  "description": "description of ApiItem"
+                },
+                "displayName": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "format": "ascii_printable",
+                  "description": "display name of ApiItem"
+                },
+                "examples": {
+                  "type": "array",
+                  "description": "examples of api item",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000,
+                    "format": "ascii_printable",
+                    "description": "api item example"
+                  }
+                }
+              }
+            }
+          },
+          "body": {
+            "type": "array",
+            "description": "request body",
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "title": "Api Item",
+              "required": [
+                "key",
+                "type",
+                "required"
+              ],
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "title": "Nested Api Item",
+                  "required": [
+                    "key",
+                    "type",
+                    "required"
+                  ],
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 50,
+                      "format": "ascii_printable",
+                      "description": "key of ApiItem"
+                    },
+                    "type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "format": "ascii_printable",
+                      "description": "ApiItem Type. Could be stringified json schema.",
+                      "example": "object/string/number"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": "whether this field is required"
+                    },
+                    "description": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000,
+                      "format": "ascii_printable",
+                      "description": "description of ApiItem"
+                    },
+                    "displayName": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 50,
+                      "format": "ascii_printable",
+                      "description": "display name of ApiItem"
+                    },
+                    "examples": {
+                      "type": "array",
+                      "description": "examples of api item",
+                      "minItems": 1,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000,
+                        "format": "ascii_printable",
+                        "description": "api item example"
+                      }
+                    }
+                  }
+                },
+                "key": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "format": "ascii_printable",
+                  "description": "key of ApiItem"
+                },
+                "type": {
+                  "type": "string",
+                  "minLength": 1,
+                  "format": "ascii_printable",
+                  "description": "ApiItem Type. Could be stringified json schema.",
+                  "example": "object/string/number"
+                },
+                "required": {
+                  "type": "boolean",
+                  "description": "whether this field is required"
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1000,
+                  "format": "ascii_printable",
+                  "description": "description of ApiItem"
+                },
+                "displayName": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "format": "ascii_printable",
+                  "description": "display name of ApiItem"
+                },
+                "examples": {
+                  "type": "array",
+                  "description": "examples of api item",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000,
+                    "format": "ascii_printable",
+                    "description": "api item example"
+                  }
+                }
+              }
+            }
+          },
+          "query_params": {
+            "type": "array",
+            "description": "query params",
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "title": "Api Item",
+              "required": [
+                "key",
+                "type",
+                "required"
+              ],
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "title": "Nested Api Item",
+                  "required": [
+                    "key",
+                    "type",
+                    "required"
+                  ],
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 50,
+                      "format": "ascii_printable",
+                      "description": "key of ApiItem"
+                    },
+                    "type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "format": "ascii_printable",
+                      "description": "ApiItem Type. Could be stringified json schema.",
+                      "example": "object/string/number"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": "whether this field is required"
+                    },
+                    "description": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1000,
+                      "format": "ascii_printable",
+                      "description": "description of ApiItem"
+                    },
+                    "displayName": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 50,
+                      "format": "ascii_printable",
+                      "description": "display name of ApiItem"
+                    },
+                    "examples": {
+                      "type": "array",
+                      "description": "examples of api item",
+                      "minItems": 1,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000,
+                        "format": "ascii_printable",
+                        "description": "api item example"
+                      }
+                    }
+                  }
+                },
+                "key": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "format": "ascii_printable",
+                  "description": "key of ApiItem"
+                },
+                "type": {
+                  "type": "string",
+                  "minLength": 1,
+                  "format": "ascii_printable",
+                  "description": "ApiItem Type. Could be stringified json schema.",
+                  "example": "object/string/number"
+                },
+                "required": {
+                  "type": "boolean",
+                  "description": "whether this field is required"
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1000,
+                  "format": "ascii_printable",
+                  "description": "description of ApiItem"
+                },
+                "displayName": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "format": "ascii_printable",
+                  "description": "display name of ApiItem"
+                },
+                "examples": {
+                  "type": "array",
+                  "description": "examples of api item",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000,
+                    "format": "ascii_printable",
+                    "description": "api item example"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "type": "array",
+            "description": "current api responses",
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "title": "Api Content Response",
+              "required": [
+                "key",
+                "status"
+              ],
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "format": "ascii_printable",
+                  "description": "key of response"
+                },
+                "status": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "format": "ascii_printable",
+                  "description": "status of response"
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "format": "ascii_printable",
+                  "description": "description of response"
+                },
+                "headers": {
+                  "type": "array",
+                  "description": "response headers",
+                  "minItems": 0,
+                  "items": {
+                    "type": "object",
+                    "title": "Api Item",
+                    "required": [
+                      "key",
+                      "type",
+                      "required"
+                    ],
+                    "properties": {
+                      "properties": {
+                        "type": "object",
+                        "title": "Nested Api Item",
+                        "required": [
+                          "key",
+                          "type",
+                          "required"
+                        ],
+                        "properties": {
+                          "key": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 50,
+                            "format": "ascii_printable",
+                            "description": "key of ApiItem"
+                          },
+                          "type": {
+                            "type": "string",
+                            "minLength": 1,
+                            "format": "ascii_printable",
+                            "description": "ApiItem Type. Could be stringified json schema.",
+                            "example": "object/string/number"
+                          },
+                          "required": {
+                            "type": "boolean",
+                            "description": "whether this field is required"
+                          },
+                          "description": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 1000,
+                            "format": "ascii_printable",
+                            "description": "description of ApiItem"
+                          },
+                          "displayName": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 50,
+                            "format": "ascii_printable",
+                            "description": "display name of ApiItem"
+                          },
+                          "examples": {
+                            "type": "array",
+                            "description": "examples of api item",
+                            "minItems": 1,
+                            "items": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 1000,
+                              "format": "ascii_printable",
+                              "description": "api item example"
+                            }
+                          }
+                        }
+                      },
+                      "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 50,
+                        "format": "ascii_printable",
+                        "description": "key of ApiItem"
+                      },
+                      "type": {
+                        "type": "string",
+                        "minLength": 1,
+                        "format": "ascii_printable",
+                        "description": "ApiItem Type. Could be stringified json schema.",
+                        "example": "object/string/number"
+                      },
+                      "required": {
+                        "type": "boolean",
+                        "description": "whether this field is required"
+                      },
+                      "description": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000,
+                        "format": "ascii_printable",
+                        "description": "description of ApiItem"
+                      },
+                      "displayName": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 50,
+                        "format": "ascii_printable",
+                        "description": "display name of ApiItem"
+                      },
+                      "examples": {
+                        "type": "array",
+                        "description": "examples of api item",
+                        "minItems": 1,
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 1000,
+                          "format": "ascii_printable",
+                          "description": "api item example"
+                        }
+                      }
+                    }
+                  }
+                },
+                "data": {
+                  "type": "array",
+                  "description": "response data",
+                  "minItems": 0,
+                  "items": {
+                    "type": "object",
+                    "title": "Api Item",
+                    "required": [
+                      "key",
+                      "type",
+                      "required"
+                    ],
+                    "properties": {
+                      "properties": {
+                        "type": "object",
+                        "title": "Nested Api Item",
+                        "required": [
+                          "key",
+                          "type",
+                          "required"
+                        ],
+                        "properties": {
+                          "key": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 50,
+                            "format": "ascii_printable",
+                            "description": "key of ApiItem"
+                          },
+                          "type": {
+                            "type": "string",
+                            "minLength": 1,
+                            "format": "ascii_printable",
+                            "description": "ApiItem Type. Could be stringified json schema.",
+                            "example": "object/string/number"
+                          },
+                          "required": {
+                            "type": "boolean",
+                            "description": "whether this field is required"
+                          },
+                          "description": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 1000,
+                            "format": "ascii_printable",
+                            "description": "description of ApiItem"
+                          },
+                          "displayName": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 50,
+                            "format": "ascii_printable",
+                            "description": "display name of ApiItem"
+                          },
+                          "examples": {
+                            "type": "array",
+                            "description": "examples of api item",
+                            "minItems": 1,
+                            "items": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 1000,
+                              "format": "ascii_printable",
+                              "description": "api item example"
+                            }
+                          }
+                        }
+                      },
+                      "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 50,
+                        "format": "ascii_printable",
+                        "description": "key of ApiItem"
+                      },
+                      "type": {
+                        "type": "string",
+                        "minLength": 1,
+                        "format": "ascii_printable",
+                        "description": "ApiItem Type. Could be stringified json schema.",
+                        "example": "object/string/number"
+                      },
+                      "required": {
+                        "type": "boolean",
+                        "description": "whether this field is required"
+                      },
+                      "description": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000,
+                        "format": "ascii_printable",
+                        "description": "description of ApiItem"
+                      },
+                      "displayName": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 50,
+                        "format": "ascii_printable",
+                        "description": "display name of ApiItem"
+                      },
+                      "examples": {
+                        "type": "array",
+                        "description": "examples of api item",
+                        "minItems": 1,
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 1000,
+                          "format": "ascii_printable",
+                          "description": "api item example"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "example": "1996-12-19T16:39:57-08:00",
+      "description": "time created at"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "example": "1996-12-19T16:39:57-08:00",
+      "description": "time updated at"
+    }
+  }
+}

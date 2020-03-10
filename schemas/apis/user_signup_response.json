@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "title": "User Signup Response",
+  "required": [
+    "email",
+    "status",
+    "created_at",
+    "updated_at",
+    "last_login_at",
+    "token"
+  ],
+  "properties": {
+    "email": {
+      "type": "string",
+      "pattern": "^(?:[0-9a-zA-Z]+(?:[0-9a-zA-Z-_.]){0,}){0,}[0-9a-zA-Z]@(?:(?:[0-9a-zA-Z]+(?:[0-9a-zA-Z-]){0,}){0,}[0-9a-zA-Z].){1,}[a-zA-Z]{2,20}$",
+      "format": "email",
+      "description": "email"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "description": "status of user"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "example": "1996-12-19T16:39:57-08:00",
+      "description": "time created at"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "example": "1996-12-19T16:39:57-08:00",
+      "description": "time updated at"
+    },
+    "last_login_at": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2019-12-01T16:39:57-08:00",
+      "description": "last login time"
+    },
+    "token": {
+      "type": "string",
+      "minLength": 1,
+      "format": "ascii_printable",
+      "description": "user token"
+    }
+  }
+}
