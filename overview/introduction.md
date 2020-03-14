@@ -1,11 +1,11 @@
-# dotsby
+# Dotsby
 Dotsby is a document generator service tailored for api docs. It helps you deploy API docs in seconds.
 
 
 
 ## Features
 
-* Generate local files to document website. 
+* Generate local files to document website.
 * Support both markdown files and standard raml 1.0 files.
 * Support 3 modes: edit, preview and publish. (Currently, only support publish mode.)
 * Support Server-side rendering  in publish mode.
@@ -65,7 +65,7 @@ yarn global add https://github.com/magentaqin/dotsby.git
 
 In the dashboard, click "Create New Document". After successfully creating, copy the meta info of your document, and paste it to `index.js` file.
 
-* Config the `index.js`. Config format: 
+* Config the `index.js`. Config format:
 * Publish the document.
 
 Nav to your document directory.
