@@ -10,7 +10,7 @@ Dotsby is a document generator service tailored for api docs. It helps you deplo
 * Support 3 modes: edit, preview and publish. (Currently, only support publish mode.)
 * Support Server-side rendering  in publish mode.
 * Support search for text, api path, and api field. (Currently, only support text search.)
-* Support management for multiple versions of doc and multiple docs. Please visit  [Dotsby Dashboard](http://dotsby.cn).
+* Support management for multiple versions of doc and multiple docs. Please visit  [Dotsby Dashboard](http://www.dotsby.cn).
 
 
 
@@ -28,7 +28,7 @@ yarn global add https://github.com/magentaqin/dotsby.git
 git clone https://github.com/magentaqin/dotsby-docs.git
 ```
 
-**3. Change directory to dotsby-docs, and pubish your document**
+**3. Change directory to dotsby-docs, and publish your document**
 
 ```
 cd dotsby-docs
@@ -60,7 +60,7 @@ password: dotsby123456
 yarn global add https://github.com/magentaqin/dotsby.git
 ```
 
-* Go to [Dotsby Dashboard](http://dotsby.cn).  Sign up your account.
+* Go to [Dotsby Dashboard](http://www.dotsby.cn).  Sign up your account.
 * Publish Document
 
 In the dashboard, click "Create New Document". After successfully creating, copy the meta info of your document, and paste it to `index.js` file.
@@ -80,7 +80,7 @@ dotsby publish ./projects/my-api-doc
 
 
 
-## Git Submodule `dotsby-schema`
+## Git Submodule dotsby-schema
 
 Git submodule `dotsby-schema` roles as **"schema validation"** for `dotsby`，`dotsby-backend`, `dotsby-dashboard` and `dotsby-docs`  as well as **"resources"** for `dotsby-docs` after being converted from *.js to *.json.
 

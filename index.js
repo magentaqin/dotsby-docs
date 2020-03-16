@@ -1,7 +1,7 @@
 const config = {
-  title: 'Dotsby Api Doc',
+  title: 'Test Api Doc',
   version: '0.1.0',
-  document_id: '7abd1a45480019aafbc3d3cfa875666835694e6b',
+  document_id: '99d7f64cd944f5dcc277ef1f0a16ea4b6c862149',
   raml_file: 'api.raml',
   sections: [
     {
